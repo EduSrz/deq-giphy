@@ -1,1 +1,236 @@
-/* You can add global styles to this file, and also import other style files */
+$white: #ffffff;
+$black: #000000;
+$gray: #707070;
+$light: #f5f7fa;
+$dark: #252628;
+$blue: #017bff;
+$red: #db3545;
+$green: #29a645;
+$yellow: #e7cf31;
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('/assets/fonts/Montserrat/Montserrat-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('/assets/fonts/Montserrat/Montserrat-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/Montserrat/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/assets/fonts/Montserrat/Montserrat-ExtraBold.ttf') format('truetype');
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -moz-font-smoothing: unset;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: auto;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+img,
+svg {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  -webkit-pointer-events: none;
+  -khtml-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  -o-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-auto,
+.col-lg,
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-auto,
+.col-md,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-auto,
+.col-sm,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-auto,
+.col-xl,
+.col-xl-1,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-auto {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+input.form-control,
+textarea.form-control {
+  box-shadow: none !important;
+  resize: none;
+
+  &:read-only {
+    background-color: transparent;
+    -webkit-cursor: default;
+    -moz-cursor: default;
+    -ms-cursor: default;
+    -o-cursor: default;
+    cursor: default;
+
+    &:focus {
+      border: 1px solid #ced4da;
+    }
+  }
+
+  &:focus {
+    border: 1px solid $gray;
+  }
+
+  &.is-invalid,
+  &.is-valid {
+    background-image: none;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 50px $white inset !important;
+  -moz-box-shadow: 0 0 0 50px $white inset !important;
+  box-shadow: 0 0 0 50px $white inset !important;
+  -webkit-text-fill-color: #495057 !important;
+}
+
+a,
+button {
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+  -webkit-appearance: none;
+  -webkit-cursor: pointer;
+  -moz-cursor: pointer;
+  -ms-cursor: pointer;
+  -o-cursor: pointer;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+main {
+  padding-top: 40px;
+  min-height: 100vh;
+  position: relative;
+}
