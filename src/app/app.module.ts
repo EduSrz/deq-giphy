@@ -7,7 +7,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgModule } from '@angular/core';
 /* import { NgxBootstrapModule } from './externalModules/ngx-bootstrap.module'; */
 import { NgxMasonryModule } from 'ngx-masonry';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -55,4 +54,3 @@ import { GiphyService } from './services/giphy.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-platformBrowserDynamic().bootstrapModule(AppModule);
