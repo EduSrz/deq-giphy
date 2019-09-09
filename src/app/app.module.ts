@@ -3,8 +3,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgModule } from '@angular/core';
 /* import { NgxBootstrapModule } from './externalModules/ngx-bootstrap.module'; */
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -41,6 +43,7 @@ import { GiphyService } from './services/giphy.service';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    InfiniteScrollModule,
     /* NgxBootstrapModule, */
     ReactiveFormsModule
   ],
@@ -50,3 +53,4 @@ import { GiphyService } from './services/giphy.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule);
