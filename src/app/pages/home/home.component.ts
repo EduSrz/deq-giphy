@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { NgxMasonryOptions } from 'ngx-masonry'
 import { GiphyService } from '../../services/giphy.service'
 
 @Component({
@@ -9,7 +10,14 @@ import { GiphyService } from '../../services/giphy.service'
 export class HomeComponent implements OnInit {
 
   public trendingGifs: Array<any> = []
-  public selector: string = '.container'
+  public myOptions: NgxMasonryOptions = {
+    resize: true,
+    fitWidth: true,
+    initLayout: true,
+    horizontalOrder: true,
+    itemSelector: '.masonry-item',
+    transitionDuration: '0.5s'
+  }
 
   constructor(private giphyService: GiphyService) { }
 
@@ -17,9 +25,9 @@ export class HomeComponent implements OnInit {
     let offset = this.trendingGifs.length.toString()
     this.giphyService.getTrendingGifs(offset).subscribe(response => {
       this.trendingGifs = [...this.trendingGifs, ...response.body.data]
-      console.log(this.trendingGifs)
+      /* console.log(this.trendingGifs) */
     }, error => {
-      console.error(error)
+      /* console.error(error) */
     })
   }
 

@@ -1,11 +1,11 @@
-<main infiniteScroll [infiniteScrollDistance]="1" (scrolled)="listTrendingGifs()" [scrollWindow]="false">
+<main infiniteScroll [infiniteScrollDistance]="2" (scrolled)="listTrendingGifs()" [scrollWindow]="false">
   <div class="container">
-    <div class="row">
-      <div *ngFor="let gif of trendingGifs" class="col-12 col-md-4 col-lg-3">
+    <ngx-masonry [options]="myOptions" [useImagesLoaded]="true">
+      <div ngxMasonryItem class="masonry-item" *ngFor="let gif of trendingGifs">
         <figure>
-          <img [src]="gif.images.preview_gif.url" [alt]="gif.title" width="100%" height="auto">
+          <img [src]="gif.images.preview_gif.url" [alt]="gif.title">
         </figure>
       </div>
-    </div>
+    </ngx-masonry>
   </div>
 </main>
