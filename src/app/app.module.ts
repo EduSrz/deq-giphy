@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgModule } from '@angular/core';
 /* import { NgxBootstrapModule } from './externalModules/ngx-bootstrap.module'; */
+import { NgxMasonryModule } from 'ngx-masonry';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 // COMPONENTS
@@ -45,6 +46,7 @@ import { GiphyService } from './services/giphy.service';
     HttpClientModule,
     InfiniteScrollModule,
     /* NgxBootstrapModule, */
+    NgxMasonryModule,
     ReactiveFormsModule
   ],
   providers: [
