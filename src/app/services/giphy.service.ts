@@ -17,7 +17,7 @@ export class GiphyService {
     return this.http.get<any>(`${BASE_URL}/trending`, {
       params: {
         api_key: API_KEY,
-        limit: '13',
+        limit: '30',
         offset: offset,
         random_id: USER_ID
       },
@@ -31,7 +31,7 @@ export class GiphyService {
       params: {
         api_key: API_KEY,
         q: keyWord,
-        limit: '13',
+        limit: '30',
         offset: offset,
         random_id: USER_ID
       },
