@@ -1,4 +1,5 @@
-<main id="main" (scroll)="onMasonryScroll()" infiniteScroll [infiniteScrollDistance]="0.03" (scrolled)="listTrendingGifs()" [scrollWindow]="false">
+<main id="main" (scroll)="onMasonryScroll()" infiniteScroll [infiniteScrollDistance]="0.03"
+  (scrolled)="listTrendingGifs()" [scrollWindow]="false">
   <div class="container">
     <ngx-masonry [options]="myOptions" [useImagesLoaded]="true">
       <div ngxMasonryItem class="masonry-item" *ngFor="let gif of trendingGifs">
@@ -13,5 +14,7 @@
       </div>
     </div>
   </div>
-  <button *ngIf="showGoUpButton" class="btn btn-dark scroll-top" (click)="scrollTop()"></button>
+  <button *ngIf="showGoUpButton" class="btn btn-dark scroll-top" (click)="scrollTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 </main>
