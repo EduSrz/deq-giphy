@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
   showGifDetails(details: any){
     let options: ModalOptions = {animated: true, class: 'modal-dialog-centered', initialState: details}
     this.modalReference = this.modalService.show(GifDetailComponent, options);
-    console.log(details)
   }
 
   listTrendingGifs() {
