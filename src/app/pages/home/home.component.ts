@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   constructor(private giphyService: GiphyService, private modalService: BsModalService) {}
 
   showGifDetails(details: any){
-    let options: ModalOptions = {animated: true, class: 'modal-dialog-centered', initialState: details}
+    let options: ModalOptions = {animated: true, class: 'modal-dialog-centered', ignoreBackdropClick: true, initialState: details}
     this.modalReference = this.modalService.show(GifDetailComponent, options);
   }
 
