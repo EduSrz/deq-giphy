@@ -14,10 +14,10 @@ export class GiphyService {
   constructor(private http: HttpClient) { }
 
   public getTrendingGifs(offset: string) {
-    return this.http.get<any>(`${BASE_URL}/trending`, {
+    return this.http.get<any>(`${BASE_URL}/gifs/trending`, {
       params: {
         api_key: API_KEY,
-        limit: '50',
+        limit: '30',
         offset: offset,
         random_id: USER_ID
       },
@@ -27,11 +27,11 @@ export class GiphyService {
   }
 
   public searchGifs(offset: string, keyWord: string) {
-    return this.http.get<any>(`${BASE_URL}/search`, {
+    return this.http.get<any>(`${BASE_URL}/gifs/search`, {
       params: {
         api_key: API_KEY,
         q: keyWord,
-        limit: '50',
+        limit: '30',
         offset: offset,
         random_id: USER_ID
       },
@@ -41,7 +41,7 @@ export class GiphyService {
   }
 
   public getFavoritesGifs(favoritesGifsId: string) {
-    return this.http.get<any>(BASE_URL, {
+    return this.http.get<any>(`${BASE_URL}/gifs`, {
       params: {
         api_key: API_KEY,
         ids: favoritesGifsId,
