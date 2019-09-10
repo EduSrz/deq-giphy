@@ -237,24 +237,45 @@ main {
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-}
 
-.masonry-item {
-  width: 250px;
-  height: auto;
-  padding: 5px;
+  .masonry-item {
+    width: 250px;
+    height: auto;
+    padding: 5px;
 
-  figure {
-    -webkit-cursor: pointer;
-    -moz-cursor: pointer;
-    -ms-cursor: pointer;
-    -o-cursor: pointer;
-    cursor: pointer;
-    margin: 0;
+    figure {
+      -webkit-cursor: pointer;
+      -moz-cursor: pointer;
+      -ms-cursor: pointer;
+      -o-cursor: pointer;
+      cursor: pointer;
+      margin: 0;
 
-    img {
-      width: 100%;
-      height: auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
+  }
+
+  div.d-flex {
+    height: 60px;
+    div.spinner-border {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .scroll-top{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    visibility: visible;
+    padding: 25px;
+    background-image: url(./assets/icons/arrow-up.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 35%;
+    border-radius: 50%;
   }
 }
