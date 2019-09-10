@@ -8,7 +8,7 @@ import { BsModalRef, ModalOptions } from 'ngx-bootstrap/modal'
 })
 export class GifDetailComponent implements OnInit {
 
-  public details = {}
+  public details: any
 
   constructor(private modalOptions: ModalOptions, public modalRef: BsModalRef) { }
 
