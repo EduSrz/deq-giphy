@@ -1,12 +1,13 @@
 //MODULES
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserModule } from '@angular/platform-browser'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { ClipboardModule } from 'ngx-clipboard'
 import { HttpClientModule } from '@angular/common/http'
 import { InfiniteScrollModule } from 'ngx-infinite-scroll'
 import { ModalModule } from 'ngx-bootstrap/modal'
 import { NgModule } from '@angular/core'
 import { NgxMasonryModule } from 'ngx-masonry'
+import { ShareModule } from '@ngx-share/core'
 
 // COMPONENTS
 import { AppComponent } from './app.component'
@@ -38,12 +39,12 @@ import { RandomUidService } from './services/random-uid.service'
   imports: [
     AppRoutingModule,
     BrowserModule,
-    FormsModule,
+    ClipboardModule,
     HttpClientModule,
     InfiniteScrollModule,
     ModalModule.forRoot(),
     NgxMasonryModule,
-    ReactiveFormsModule
+    ShareModule
   ],
   entryComponents: [
     GifDetailComponent
