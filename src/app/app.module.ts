@@ -1,29 +1,27 @@
 //MODULES
-import { AppRoutingModule } from './app-routing.module';
-import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module'
+import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { HttpClientModule } from '@angular/common/http';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { NgModule } from '@angular/core';
-/* import { NgxBootstrapModule } from './externalModules/ngx-bootstrap.module'; */
-import { NgxMasonryModule } from 'ngx-masonry';
+import { HttpClientModule } from '@angular/common/http'
+import { InfiniteScrollModule } from 'ngx-infinite-scroll'
+import { ModalModule } from 'ngx-bootstrap/modal'
+import { NgModule } from '@angular/core'
+import { NgxMasonryModule } from 'ngx-masonry'
 
 // COMPONENTS
-import { AppComponent } from './app.component';
-import { FavoritesComponent } from './pages/favorites/favorites.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { GifDetailComponent } from './pages/gif-detail/gif-detail.component';
-import { GifPreviewComponent } from './modals/gif-preview/gif-preview.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginSignupComponent } from './modals/login-signup/login-signup.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { ResultsComponent } from './pages/results/results.component';
-import { SearchBarComponent } from './shared/search-bar/search-bar.component';
+import { AppComponent } from './app.component'
+import { FavoritesComponent } from './pages/favorites/favorites.component'
+import { FooterComponent } from './shared/footer/footer.component'
+import { GifDetailComponent } from './modals/gif-detail/gif-detail.component'
+import { HeaderComponent } from './shared/header/header.component'
+import { HomeComponent } from './pages/home/home.component'
+import { NotFoundComponent } from './pages/not-found/not-found.component'
+import { ResultsComponent } from './pages/results/results.component'
+import { SearchBarComponent } from './shared/search-bar/search-bar.component'
 
 //SERVICES
-import { GiphyService } from './services/giphy.service';
-import { RandomUidService } from './services/random-uid.service';
+import { GiphyService } from './services/giphy.service'
+import { RandomUidService } from './services/random-uid.service'
 
 @NgModule({
   declarations: [
@@ -33,8 +31,6 @@ import { RandomUidService } from './services/random-uid.service';
     ResultsComponent,
     GifDetailComponent,
     NotFoundComponent,
-    GifPreviewComponent,
-    LoginSignupComponent,
     HeaderComponent,
     FooterComponent,
     SearchBarComponent
@@ -45,9 +41,12 @@ import { RandomUidService } from './services/random-uid.service';
     FormsModule,
     HttpClientModule,
     InfiniteScrollModule,
-    /* NgxBootstrapModule, */
+    ModalModule.forRoot(),
     NgxMasonryModule,
     ReactiveFormsModule
+  ],
+  entryComponents: [
+    GifDetailComponent
   ],
   providers: [
     GiphyService,

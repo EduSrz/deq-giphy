@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core'
+import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal'
+import { GifDetailComponent } from '../../modals/gif-detail/gif-detail.component'
 import { NgxMasonryOptions } from 'ngx-masonry'
 import { GiphyService } from '../../services/giphy.service'
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  /* host: {"window:scroll": '$event'} */
+  styleUrls: ['./home.component.scss']
 })
 
 export class HomeComponent implements OnInit {
@@ -16,8 +17,15 @@ export class HomeComponent implements OnInit {
   public loading: boolean = false
   public showGoUpButton: boolean = false
   public mainContainer: any
+  public modalReference: BsModalRef
 
-  constructor(private giphyService: GiphyService) {}
+  constructor(private giphyService: GiphyService, private modalService: BsModalService) {}
+
+  showGifDetails(details: any){
+    let options: ModalOptions = {animated: true, class: 'modal-dialog-centered', initialState: details}
+    this.modalReference = this.modalService.show(GifDetailComponent, options);
+    console.log(details)
+  }
 
   listTrendingGifs() {
     this.mainContainer.style.scrollBehavior = 'smooth'
@@ -28,7 +36,6 @@ export class HomeComponent implements OnInit {
       this.giphyService.getTrendingGifs(offset).subscribe(response => {
         this.trendingGifs.push(...response.body.data)
         this.mainContainer.style.overflowY = 'scroll'
-        /* console.log(this.trendingGifs) */
       }, error => {
         this.loading = false
         console.error(error)
@@ -57,6 +64,4 @@ export class HomeComponent implements OnInit {
     this.listTrendingGifs()
   }
 
-  ngOnDestroy() {
-  }
 }

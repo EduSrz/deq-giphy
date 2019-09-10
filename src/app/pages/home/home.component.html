@@ -2,7 +2,7 @@
   <div class="container">
     <ngx-masonry [options]="myOptions" [useImagesLoaded]="true">
       <div ngxMasonryItem class="masonry-item" *ngFor="let gif of trendingGifs">
-        <figure>
+        <figure (click)="showGifDetails(gif)">
           <img [src]="gif.images.preview_gif.url" [alt]="gif.title">
         </figure>
       </div>
