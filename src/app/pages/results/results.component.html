@@ -1,1 +1,20 @@
-<p>results works!</p>
+<main id="main" (scroll)="onMasonryScroll()" infiniteScroll [infiniteScrollDistance]="0.03"
+  (scrolled)="listMatchGifs()" [scrollWindow]="false">
+  <div class="container">
+    <ngx-masonry [options]="myOptions" [useImagesLoaded]="true">
+      <div ngxMasonryItem class="masonry-item" *ngFor="let gif of results">
+        <figure (click)="showGifDetails(gif)">
+          <img [src]="gif.images.preview_gif.url" [alt]="gif.title">
+        </figure>
+      </div>
+    </ngx-masonry>
+    <div *ngIf="loading" class="d-flex justify-content-center align-items-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <button *ngIf="showGoUpButton" class="btn btn-dark scroll-top" (click)="scrollTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</main>
