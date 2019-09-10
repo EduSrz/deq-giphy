@@ -15,7 +15,6 @@ export class GifDetailComponent implements OnInit {
   ngOnInit() {
     if(this.modalOptions.initialState) {
       this.details = this.modalOptions.initialState
-      console.log(this.details)
     }
   }
 

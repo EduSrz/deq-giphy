@@ -2,6 +2,7 @@
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserModule } from '@angular/platform-browser'
 import { ClipboardModule } from 'ngx-clipboard'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
 import { InfiniteScrollModule } from 'ngx-infinite-scroll'
 import { ModalModule } from 'ngx-bootstrap/modal'
@@ -11,14 +12,11 @@ import { ShareModule } from '@ngx-share/core'
 
 // COMPONENTS
 import { AppComponent } from './app.component'
-import { FavoritesComponent } from './pages/favorites/favorites.component'
-import { FooterComponent } from './shared/footer/footer.component'
 import { GifDetailComponent } from './modals/gif-detail/gif-detail.component'
 import { HeaderComponent } from './shared/header/header.component'
 import { HomeComponent } from './pages/home/home.component'
 import { NotFoundComponent } from './pages/not-found/not-found.component'
 import { ResultsComponent } from './pages/results/results.component'
-import { SearchBarComponent } from './shared/search-bar/search-bar.component'
 
 //SERVICES
 import { GiphyService } from './services/giphy.service'
@@ -28,22 +26,21 @@ import { RandomUidService } from './services/random-uid.service'
   declarations: [
     AppComponent,
     HomeComponent,
-    FavoritesComponent,
     ResultsComponent,
     GifDetailComponent,
     NotFoundComponent,
-    HeaderComponent,
-    FooterComponent,
-    SearchBarComponent
+    HeaderComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     ClipboardModule,
+    FormsModule,
     HttpClientModule,
     InfiniteScrollModule,
     ModalModule.forRoot(),
     NgxMasonryModule,
+    ReactiveFormsModule,
     ShareModule
   ],
   entryComponents: [
