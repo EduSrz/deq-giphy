@@ -6,7 +6,8 @@ const USER_ID = localStorage.getItem('user_id')
 @Component({
   selector: 'app-root',
   template: `
-    <router-outlet></router-outlet>
+  <app-header></app-header>
+  <router-outlet></router-outlet>
   `
 })
 export class AppComponent implements OnInit {

@@ -1,1 +1,13 @@
-<p>header works!</p>
+<nav class="navbar fixed-top navbar-expand navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img src="/assets/img/logo.svg" alt="Eduardo Suarez">
+    </a>
+    <form class="input-group col-md-6" [formGroup]="searchForm" (ngSubmit)="reDirect()">
+      <input type="search" class="form-control" placeholder="Search" formControlName="keyword" aria-label="search">
+      <div class="input-group-append">
+        <button class="btn btn-light" type="submit"><i class="fas fa-search"></i></button>
+      </div>
+    </form>
+  </div>
+</nav>

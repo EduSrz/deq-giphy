@@ -1,0 +1,17 @@
+nav.navbar{
+  div.container {
+    padding: 0 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    a.navbar-brand {
+      img {
+        width: 70px;
+        height: auto;
+      }
+    }
+    div.col-md-6 {
+      padding: 0;
+    }
+  }
+}
