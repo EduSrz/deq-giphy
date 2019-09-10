@@ -23,6 +23,7 @@ import { SearchBarComponent } from './shared/search-bar/search-bar.component';
 
 //SERVICES
 import { GiphyService } from './services/giphy.service';
+import { RandomUidService } from './services/random-uid.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { GiphyService } from './services/giphy.service';
     ReactiveFormsModule
   ],
   providers: [
-    GiphyService
+    GiphyService,
+    RandomUidService
   ],
   bootstrap: [AppComponent]
 })
