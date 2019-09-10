@@ -1,1 +1,45 @@
-<p>gif-preview works!</p>
+<!-- Modal Header -->
+<div class="modal-header">
+  <h6 *ngIf="details.title;else noTitle" class="modal-title">{{details.title}}</h6>
+  <ng-template #noTitle>
+    <h6 class="modal-title">Untitled GIF</h6>
+  </ng-template>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<!-- Modal Body -->
+<div class="modal-body">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <figure>
+        <img class="gif" [src]="details.images.original.url" [alt]="details.title">
+        <figcaption>
+          Uploadded by
+          <a *ngIf="details.user;else noUser" [href]="details.user.profile_url" target="_blank">{{details.username}}</a>
+          <ng-template #noUser>an anonymous user</ng-template>
+          on {{details.import_datetime | date: 'short' }}
+        </figcaption>
+      </figure>
+    </div>
+    <div class="col-12 col-md-4">
+      <ul>
+        <li class="action">
+          <i class="fas fa-star"></i>
+          <span>Favorite</span>
+        </li>
+        <li class="action">
+          <i class="fas fa-link"></i>
+          <span ngxClipboard [cbContent]="details.bitly_gif_url">Copy Link</span>
+        </li>
+        <li>Rating: {{details.rating}}</li>
+      </ul>
+      <div class="social-media">
+        <span>Shared It:</span>
+        <button class="facebook" shareButton="facebook" [url]="details.url"><i class="fab fa-facebook-f"></i></button>
+        <button class="twitter" shareButton="twitter" [url]="details.url"><i class="fab fa-twitter"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

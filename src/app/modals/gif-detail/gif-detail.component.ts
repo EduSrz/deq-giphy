@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { BsModalRef, ModalOptions } from 'ngx-bootstrap/modal'
 
 @Component({
   selector: 'app-gif-detail',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GifDetailComponent implements OnInit {
 
-  constructor() { }
+  public details = {}
+
+  constructor(private modalOptions: ModalOptions, public modalRef: BsModalRef) { }
 
   ngOnInit() {
+    if(this.modalOptions.initialState) {
+      this.details = this.modalOptions.initialState
+      console.log(this.details)
+    }
   }
 
 }

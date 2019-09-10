@@ -1,0 +1,114 @@
+$purple: #870aff;
+$blue: #3a30f6;
+$cian: #0096ff;
+
+$gradient: linear-gradient(to right, $purple 0%, $blue 40%, $cian 100%);
+$moz-gradient: -moz-linear-gradient(to right, $purple 0%, $blue 40%, $cian 100%);
+$webkit-gradient: webkit-linear-gradient(to right, $purple 0%, $blue 40%, $cian 100%);
+$ms-gradient: progid:DXImageTransform.Microsoft.gradient(startColorstr='#870aff', endColorstr='#0096ff', GradientType=1);
+
+.modal-header {
+  color: #fff;
+  background: $webkit-gradient;
+  background: $moz-gradient;
+  filter: $ms-gradient;
+  background: $gradient;
+
+  button.close {
+    color: #fff;
+    text-shadow: 0 1px 0 #000;
+
+    &:hover {
+      color: #fff;
+      text-shadow: 0 1px 0 #000;
+    }
+  }
+}
+
+.modal-body {
+  div.row {
+    div.col-12 {
+      figure {
+        margin: 0;
+
+        img.gif {
+          width: 100%;
+          height: auto;
+          margin-bottom: 0.5rem;
+        }
+
+        figcaption {
+          font-size: 12px;
+        }
+      }
+
+      ul {
+        width: auto;
+        list-style: none;
+        font-size: 12px;
+        font-weight: 600;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin-bottom: 5px;
+
+        @media (max-width: 767.98px) {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+
+        li {
+          margin: 5px 0;
+          -webkit-cursor: default;
+          -moz-cursor: default;
+          -ms-cursor: default;
+          -o-cursor: default;
+          cursor: default;
+
+          &.action {
+            span {
+              -webkit-cursor: pointer;
+              -moz-cursor: pointer;
+              -ms-cursor: pointer;
+              -o-cursor: pointer;
+              cursor: pointer;
+              margin-left: 5px;
+
+              &:active {
+                font-weight: 800;
+              }
+            }
+          }
+        }
+      }
+
+      div.social-media {
+        @media (max-width: 767.98px) {
+          text-align: center;
+        }
+        span {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          font-size: 13px;
+          font-weight: 600;
+          margin: 5px 0;
+        }
+
+        button {
+          &.facebook {
+            margin: 0 10px;
+            color: #3e5b98;
+          }
+
+          &.twitter {
+            color: #4da7de;
+          }
+        }
+      }
+    }
+  }
+}
